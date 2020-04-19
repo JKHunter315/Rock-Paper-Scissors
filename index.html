@@ -6,7 +6,63 @@
     </head>
     <body>
         <script>
-            
+            function computerPlay() {
+                let num = Math.floor(Math.random() * 4);
+                let choice;
+                if (num === 1) {
+                    choice = "Rock";
+                } else if (num === 2) {
+                    choice = "Paper";
+                } else if (num === 3) {
+                    choice = "Scissors";
+                }
+                return choice;
+            }
+            function playRound(computerSelection, playerChoice) {
+                const computerChoice = computerSelection.toLowerCase();
+                if (playerChoice === computerChoice) {
+                    return "Tie!";
+                } else if ((playerChoice === "rock" && computerChoice === "scissors")
+                    || (playerChoice === "paper" && computerChoice === "rock")
+                    || (playerChoice === "scissors" && computerChoice === "paper")) {
+                    return "Player wins!";
+                } else {
+                    return "Computer wins!";
+                }
+            }
+
+            function game() {
+                let winner;
+                let computerScore = 0;
+                let playerScore = 0;
+                let computerChoice = computerPlay();
+                let i;
+                for (i = 0; i < 5; i++) {
+                    const playerChoice = (prompt("What is your choice?")).toLowerCase();
+                    winner = playRound(computerChoice, playerChoice);
+                    if (winner === "Computer wins!") {
+                        computerScore++;
+                        console.log(playRound(computerChoice, playerChoice));
+                    }
+                    else if (winner === "Player wins!") {
+                        playerScore++;
+                        console.log(playRound(computerChoice, playerChoice));
+                    } else {
+                        console.log("Its a tie!");
+                        }
+                    }
+                    console.log(computerScore);
+                    console.log(playerScore);
+                if (computerScore == playerScore) {
+                    console.log("This round is a tie!");
+                } else if (computerScore > playerScore) {
+                    console.log("Computer wins this round!");
+                } else if (computerScore < playerScore) {
+                    console.log("You win this round!");
+                    }
+                }    
+
+            game();
         </script>
     </body>
 </html>
