@@ -3,66 +3,31 @@
     <head>
         <title> Rock paper scissors game </title>
         <meta charset="UTF-8">
+        <link rel = "stylesheet" type = "text/css"href = "style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <script>
-            function computerPlay() {
-                let num = Math.floor(Math.random() * 4);
-                let choice;
-                if (num === 1) {
-                    choice = "Rock";
-                } else if (num === 2) {
-                    choice = "Paper";
-                } else if (num === 3) {
-                    choice = "Scissors";
-                }
-                return choice;
-            }
-            function playRound(computerSelection, playerChoice) {
-                const computerChoice = computerSelection.toLowerCase();
-                if (playerChoice === computerChoice) {
-                    return "Tie!";
-                } else if ((playerChoice === "rock" && computerChoice === "scissors")
-                    || (playerChoice === "paper" && computerChoice === "rock")
-                    || (playerChoice === "scissors" && computerChoice === "paper")) {
-                    return "Player wins!";
-                } else {
-                    return "Computer wins!";
-                }
-            }
-
-            function game() {
-                let winner;
-                let computerScore = 0;
-                let playerScore = 0;
-                let computerChoice = computerPlay();
-                let i;
-                for (i = 0; i < 5; i++) {
-                    const playerChoice = (prompt("What is your choice?")).toLowerCase();
-                    winner = playRound(computerChoice, playerChoice);
-                    if (winner === "Computer wins!") {
-                        computerScore++;
-                        console.log(playRound(computerChoice, playerChoice));
-                    }
-                    else if (winner === "Player wins!") {
-                        playerScore++;
-                        console.log(playRound(computerChoice, playerChoice));
-                    } else {
-                        console.log("Its a tie!");
-                        }
-                    }
-                    console.log(computerScore);
-                    console.log(playerScore);
-                if (computerScore == playerScore) {
-                    console.log("This round is a tie!");
-                } else if (computerScore > playerScore) {
-                    console.log("Computer wins this round!");
-                } else if (computerScore < playerScore) {
-                    console.log("You win this round!");
-                    }
-                }    
-
-            game();
-        </script>
+        <h1> Rock Paper Scissors </h1>
+        <h2> Choose your weapon! </h2>
+        <div id="buttons">
+            <button class="choices"> <img src="https://image.flaticon.com/icons/svg/798/798354.svg" id="rock">
+                </button>
+            <button  class="choices"> <img src="https://image.flaticon.com/icons/svg/941/941565.svg" id="paper">
+                </button>
+            <button  class="choices" > <img src="https://image.flaticon.com/icons/svg/656/656234.svg" id="scissors">
+                </button>  
+            </div>
+        <div id="scoreboard">
+            <div id="player" class="player-board">
+                <h3> You </h3>
+                <span id="player-score">0</span>
+        </div>
+        <div id="results"></div>
+        <div id="computer" class="player-board">
+            <h3> Bot </h3>
+            <span id="computer-score">0</span>
+        </div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

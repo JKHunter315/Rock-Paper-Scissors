@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+html {
+  background: url('https://wallpaperaccess.com/full/255090.jpg');
+  background-size: cover;
+  font-family: 'Shojumaru', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  display:block;
+  margin: auto auto;
+  color: white;
+  font-size: 2em;
+  background-color: rgba(46, 4, 4, 0.8);
+  margin-top: -1em;
+  width: 50%;
+  padding-top: .2em;
+  padding-bottom: 0.2em;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.choices {
+  font-size: 4em;
+  margin: 1em;
+  width: 17%;
+}
+
+.choices:hover {
+  transform: scale(1.1);
+}
+
+#scoreboard {
+    margin: auto auto;
+    text-align: center;
+    background-color: rgb(244, 239, 193);
+    width: 70%;
+    height: 30vh; 
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    align-items: center;
+    font-size: 250%;
+    border: 10px groove #7A3826;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    padding-bottom: 1%;
+    box-shadow: 5px 10px 2px rgba(0,0,0,0.4);
+  }
+
+  #scoreboard h3 {
+      margin-top: -1px;
+      margin-bottom: 2px;
+  }
+  
+  span {
+    font-size: 280%;
+    font-family: sans-serif;
+  }
+  
